@@ -8,7 +8,7 @@ mkdir -p "$out_dir"
 
 for input in "$src_dir"/*; do
   echo "Copying $input"
-  cp $input "$out_dir/$(basename $input)"
+  cp -r $input "$out_dir/$(basename $input)"
 done
 
 for input in "$out_dir"/*.rs; do
