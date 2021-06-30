@@ -12,12 +12,9 @@ else
   runtime=$1
 fi
 
-rm -rf out
-bash build.sh
-
 status=0
 
-for input in out/*.wasm; do
+for input in *.wasm; do
   echo "Testing $input..."
   tools/wasm-test $runtime $input || status=1
 done
