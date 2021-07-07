@@ -12,6 +12,8 @@ else
   runtime=$1
 fi
 
+bash build.sh
+
 status=0
 
 for input in *.wasm; do
