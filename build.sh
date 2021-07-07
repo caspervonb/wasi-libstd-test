@@ -2,6 +2,8 @@
 set -ueo pipefail
 
 for input in *.rs; do
+  output="$(basename $input .rs).wasm"
+
   echo "Compiling $input"
-  rustc --target=wasm32-wasi -o "$(basename $input .rs).wasm" "$input"
+  rustc --target=wasm32-wasi -o "$output" "$input"
 done
